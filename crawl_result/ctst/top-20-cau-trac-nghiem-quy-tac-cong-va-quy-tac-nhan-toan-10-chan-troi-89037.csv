@@ -1,0 +1,35 @@
+question,A,B,C,D,answer,reasoning
+"Giả sử một công việc có thể được thực hiện theo một trong ba phương án. Phương án A có 3 cách thực hiện, phương án B có 4 cách thực hiện, phương án C có 7 cách thực hiện (các cách thực hiện của cả ba phương án là khác nhau đôi một). Số cách thực hiện công việc đó là:",14 cách,19 cách,84 cách,31 cách,A,"Công việc có ba phương án thực hiện:
+⦁ Phương án A có 3 cách thực hiện;
+⦁ Phương án B có 4 cách thực hiện;
+⦁ Phương án C có 7 cách thực hiện.
+Ta thấy mỗi cách thực hiện của phương án này không trùng với bất kì cách nào của phương án kia. Do đó, theo quy tắc cộng, ta có 3 + 4 + 7 = 14 cách thực hiện công việc đã cho."
+"Từ sơ đồ cây, số loại giao tử của kiểu gen AaBb là:",4,,,,A,"Từ sơ đồ cây, ta thấy có 4 kết quả có thể xảy ra. Do đó số loại giao tử của kiểu gen AaBb là 4."
+"Cho kiểu gen AaBb. Giả sử quá trình giảm phân tạo giao tử bình thường và không xảy ra đột biến. Sơ đồ hình cây biểu thị sự hình thành giao tử được biểu diễn như hình bên. Từ sơ đồ cây, số loại giao tử của kiểu gen AaBb là:",4,2,8,16,A,"Từ sơ đồ cây, ta thấy có 4 kết quả có thể xảy ra. Do đó số loại giao tử của kiểu gen AaBb là 4."
+Trong một hộp chứa 6 quả cầu trắng được đánh số từ 1 đến 6 và ba quả cầu đen được đánh số 7; 8; 9. Có bao nhiêu cách chọn một trong các quả cầu ấy?,27,9,6,3,B,"Theo quy tắc cộng, ta có tất cả 6 + 3 = 9 cách chọn một quả cầu trong hộp."
+Từ các chữ số 1; 5; 6; 7; 9 có thể lập được bao nhiêu số tự nhiên có 4 chữ số?,24,120,20,625,D,"Gọi $overline{abcd}$ là số cần tìm. 
+Việc lập một số tự nhiên có 4 chữ số gồm 4 công đoạn:
+Công đoạn 1: Chọn số ở vị trí a, có 5 cách chọn một chữ số từ các chữ số 1; 5; 6; 7; 9.
+Công đoạn 2: Chọn số ở vị trí b, có 5 cách chọn một số từ các chữ số 1; 5; 6; 7; 9.
+Công đoạn 3: Chọn số ở vị trí c, có 5 cách chọn một số từ các chữ số 1; 5; 6; 7; 9.
+Công đoạn 4: Chọn số ở vị trí d, có 5 cách chọn một số từ các chữ số 1; 5; 6; 7; 9.
+Theo quy tắc nhân, ta có tất cả 5.5.5.5 = 5<sup>4</sup> = 625 cách lập một số tự nhiên có 4 chữ số."
+"Hội đồng quản trị của công ty X gồm 10 người. Hỏi có bao nhiêu cách bầu ra ba người vào ba vị trí chủ tịch, phó chủ tịch và thư kí, biết khả năng mỗi người là như nhau.",1,720,30,27,B,"Việc bầu ra ba người vào ba vị trí chủ tịch, phó chủ tịch và thư kí gồm ba công đoạn:
+Công đoạn 1: Bầu một người làm chủ tịch, có 10 cách chọn.
+Công đoạn 2: Ứng với mỗi cách bầu một người làm chủ tịch, có 9 cách bầu một người làm phó chủ tịch.
+Công đoạn 3: Ứng với mỗi cách bầu một người làm chủ tịch và bầu một người làm phó chủ tịch, có 8 cách bầu một người làm thư kí.
+Theo quy tắc nhân, ta có tất cả 10.9.8 = 720 cách bầu ra ba người vào ba vị trí chủ tịch, phó chủ tịch và thư kí."
+"Trong một tuần vào dịp nghỉ hè, bạn An dự định mỗi ngày đi thăm một người bạn trong 12 người bạn của mình. Hỏi bạn An có thể lập được bao nhiêu kế hoạch đi thăm bạn của mình (thăm một bạn không quá một lần)?",3991680,4790016,35831808,5040,A,"Theo quy tắc nhân, ta có số cách lập kế hoạch của bạn An là: 12.11.10.9.8.7.6 = 3991680"
+"Từ các chữ số 0; 1; 2; 3; 4; 5, có thể lập được bao nhiêu số lẻ gồm 4 chữ số khác nhau?",154,145,144,155,C,"Gọi $overline{abcd}$ là số cần tìm. Vì số được lập là số lẻ nên vị trí d có 3 cách chọn một trong các số 1; 3; 5. Ứng với mỗi cách chọn đó, có 4 cách chọn số ở vị trí a từ 4 chữ số khác 0 và khác số ở vị trí d đã cho. Ứng với mỗi cách chọn đó, có 4 cách chọn số ở vị trí b từ 4 chữ số còn lại. Ứng với mỗi cách chọn đó, có 3 cách chọn số ở vị trí c từ 3 chữ số còn lại. Theo quy tắc nhân, ta có tất cả 3.4.4.3 = 144 cách lập một số thỏa mãn yêu cầu bài toán."
+"Một người vào cửa hàng ăn, người đó chọn thực đơn gồm một món chính trong năm món chính, một loại quả tráng miệng trong năm loại quả tráng miệng và một loại nước uống trong ba loại nước uống. Số cách chọn thực đơn là:",25,75,100,15,B,"Việc chọn thực đơn gồm ba công đoạn:
+Công đoạn 1: Chọn một món chính, có 5 cách chọn.
+Công đoạn 2: Chọn một loại quả tráng miệng, có 5 cách chọn.
+Công đoạn 3: chọn một loại nước uống, có 3 cách chọn.
+Theo quy tắc nhân, ta có 5.5.3 = 75 cách chọn thực đơn."
+"Bíển số xe máy của tỉnh A (không gồm kí hiệu địa phương đăng kí xe và seri đăng kí) thì có 5 kí tự, mỗi kí tự là một chữ số thuộc tập hợp {0; 1; 2; 3; 4; 5; 6; 7; 8; 9} và không có biển số xe 000.01. Hỏi nếu hai kí tự đầu tiên đều không nhỏ hơn 7 thì tỉnh A có thể làm được nhiều nhất bao nhiêu biển số xe máy?",4 000,34,36,9 000,A,"Việc chọn một biển số xe gồm 4 công đoạn:
+Công đoạn 1: chọn kí tự ở vị trí đầu tiên, có 2 cách chọn một chữ số không nhỏ hơn 7 là 8; 9.
+Công đoạn 2: chọn kí tự ở vị trí thứ hai, có 2 cách chọn một chữ số không nhỏ hơn 7 là 8; 9.
+Công đoạn 3: chọn kí tự ở vị trí thứ ba, có 10 cách chọn một chữ số thuộc tập hợp {0; 1; 2; 3; 4; 5; 6; 7; 8; 9}.
+Công đoạn 4: chọn kí tự ở vị trí thứ tư, có 10 cách chọn một chữ số thuộc tập hợp {0; 1; 2; 3; 4; 5; 6; 7; 8; 9}.
+Theo quy tắc nhân, ta có tất cả 2.2.10.10.10 = 4 000 cách chọn một biển số xe."
+Số 253 125 000 có bao nhiêu ước số tự nhiên?,160,240,180,120,C,"Ta có 253 125 000 = 2<sup>3</sup>.3<sup>4</sup>.5<sup>8</sup>. Do đó mỗi ước số tự nhiên của số 253 125 000 đều có dạng 2<sup>m</sup>.3<sup>n</sup>.5<sup>p</sup>, trong đó 0 ≤ m ≤ 3, 0 ≤ n ≤ 4, 0 ≤ p ≤ 8 và m, n, p ∈ ℕ. Khi đó: ⦁ m có 4 cách chọn; ⦁ n có 5 cách chọn; ⦁ p có 9 cách chọn. Theo quy tắc nhân, ta có 4.5.9 = 180 ước số tự nhiên."

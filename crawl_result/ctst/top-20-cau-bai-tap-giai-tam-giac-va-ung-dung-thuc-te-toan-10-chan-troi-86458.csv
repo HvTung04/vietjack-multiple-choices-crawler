@@ -1,0 +1,15 @@
+question,A,B,C,D,answer,reasoning
+"a ≈ 53,8, B^ ≈ 37°, C^ ≈ 56°","322 + 452 – 2.32.45.cos87° ≈ 2898,3",,,,A,"a ≈ 53,8, B^ ≈ 37°, C^ ≈ 56°"
+Do đó phương án D.,14.3,"12,3","9,1",,D,Do đó phương án D.
+"Cho ∆ABC có AB = 4, AC = 5 và ...",A. 2,B. 3,C. 8,D. 10,"{'answer': 'B', 'reasoning': 'Giải thích: ...'}",
+Độ dài bán kính đường tròn nội tiếp ∆ABC gần giá trị nào nhất?,"0,88","0,94","1,25","2,15",C,"Vì c < b < a. Tức là, A là góc lớn nhất."
+Góc lớn nhất của ∆ABC bằng:,80°,90°,120°,150°,A,
+Cho ∆ABC thỏa mãn sinC = 2sinB.cosA. Khi đó ∆ABC là:,Tam giác tù;,,Tam giác đều;,Tam giác cân.,D,"• Theo hệ quả định lí sin, ta có: sinC = 2sinB.cosA
+• Theo hệ quả của định lí côsin, ta có: c = 2b.
+• Suy ra ∆ABC cân tại C.
+• Vậy ta chọn phương án D."
+Cho ∆ABC thỏa mãn sin2A = sinB.sinC. Khẳng định nào sau đây đúng nhất?,a2 = bc,cosA ≥ 1/2,Cả A và B đều đúng,Cả A và B đều sai,C,"Do đó phương án A đúng. Áp dụng bất đẳng thức Cauchy cho hai số b, c > 0, ta được b2 + c2 ≥ 2bc. Vì vậy cosA ≥ 1/2."
+III. Vận dụng,a2 = bc,Cả A và B đều đúng,Cả A và B đều sai,D. Cả A và B đều sai.,"{'answer': 'A', 'reasoning': 'Áp dụng định lí Pytago đảo, ta được ∆ABC vuông tại A.'}",
+Cho ∆ABC biết ...,Tam giác cân;,Tam giác thường;,Tam giác đều;,Tam giác vuông.,C,"Áp dụng định lí côsin cho ∆ABC, ta được: BC² = AB² + AC² – 2.AB.AC.cosA. Do đó AC = 10√41 + 20√2 hoặc AC = -10√41 + 20√2. Vì AC > 0 nên ta nhận AC ≈ 92,3 (m)."
+Chiều cao của cây gần nhất với giá trị nào sau đây?,"35,7 m",,"92,3 m","41,5 m",C,"Áp dụng định lí côsin cho ∆ABC, ta được: BC² = AB² + AC² - 2.AB.AC.cosA. Suy ra AC ≈ 92,3 (m)."
+Ngọn núi đó có độ cao so với mặt đất gần nhất với giá trị nào sau đây?,135 m,234 m,165 m,195 m,C,"Giải thích: Bài toán trở thành tìm bán kính đường tròn ngoại tiếp R của ∆ABC. Nửa chu vi của ∆ABC là: p = 6,455 (cm). Diện tích của ∆ABC là: S ≈ 4,0375 (cm2). Ta có S = 4R, suy ra R ≈ 4,088 (cm)."

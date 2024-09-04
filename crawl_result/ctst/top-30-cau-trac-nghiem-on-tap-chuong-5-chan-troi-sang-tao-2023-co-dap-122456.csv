@@ -1,0 +1,2 @@
+question,A,B,C,D,answer,reasoning
+"Tam giác ABC có N, P lần lượt là trung điểm BC và AC.",,,,,B,"NP = BM, NP → = BM →, MP → + NP → = MP → + BM → = BP →, vậy ta chọn đáp án B."

@@ -1,0 +1,6 @@
+question,A,B,C,D,answer,reasoning
+Một trường Trung học phổ thông có tất cả 1568 học sinh. Hỏi trường đó có khoảng bao nhiêu học sinh nếu ta làm tròn đến hàng trăm?,1500,1600,1570,2000,B,"Từ yêu cầu bài toán, ta sẽ làm tròn số 1568 đến hàng trăm. Vì số 1568 có chữ số hàng chục là 6 > 5 nên khi làm tròn số 1568 đến hàng trăm, ta được 1568 ≈ 1600. Vậy trường đó có khoảng 1600 học sinh."
+"Dung tích của một nồi áp suất là 2,5 lít ± 0,02 lít. Sai số tương đối của dung tích nồi áp suất không vượt quá giá trị nào trong các giá trị sau đây?","2,5%","0,7%","0,8%","0,79%",C,"Ta có a = 2,5 (lít) và d = 0,02 (lít). Do đó sai số tương đối là: 
+δa ≤ d/a = 0,02/2,5 = 0,8%"
+Hội chợ Trung thu có có 52 245 người tham dự. Hỏi hội chợ có khoảng bao nhiêu nghìn người?,52,53,"52,2",50,A,"Từ yêu cầu bài toán, ta sẽ làm tròn số 52 245 đến hàng nghìn. Vì số 52 245 có chữ số hàng trăm là 2 < 5 nên khi làm tròn số 52 245 đến hàng nghìn ta được 52 245 ≈ 52 000. Vậy hội chợ Trung thu có khoảng 52 nghìn người tham dự."
+"Chiều dài của một sợi dây là l = 13,455 m ± 0,02 m. Quy tròn chiều dài của sợi dây ta được",13,14,"13,4","13,5",D,"Quy tròn chiều dài của sợi dây ta được 13,5 m."
