@@ -1,3 +1,0 @@
-question,A,B,C,D,answer,reasoning
-Phát biểu nào sau đây đúng?,Biến cố có khả năng xảy ra cao hơn sẽ có xác suất nhỏ hơn biến cố có khả năng xảy ra thấp hơn;,Biến cố có khả năng xảy ra càng cao thì xác suất của nó càng gần 0;,Biến cố có khả năng xảy ra càng thấp thì xác suất của nó càng gần 1;,"Nếu một biến cố có xác suất rất bé thì trong một phép thử, biến cố đó sẽ không xảy ra.",D,"Nếu một biến cố có xác suất rất bé thì trong một phép thử, biến cố đó sẽ không xảy ra."
-"Hai xạ thủ bắn vào một tấm bia, xác suất bắn trúng bia của xạ thủ 1 và 2 lần lượt là 0,8 và 0,7. Xạ thủ nào có khả năng bắn trúng thấp hơn?",Xạ thủ 1,Xạ thủ 2,Cả hai xạ thủ đều có khả năng bắn trúng như nhau,Không thể xác định được,B,"Xạ thủ 2 có khả năng bắn trúng thấp hơn xạ thủ 1 vì 0,7 < 0,8"

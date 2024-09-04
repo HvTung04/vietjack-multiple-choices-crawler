@@ -1,3 +1,0 @@
-question,A,B,C,D,answer,reasoning
-Hợp của hai tập hợp A và B được kí hiệu là A ∪ B.,Giao của hai tập hợp A và B được kí hiệu là A ∩ B.,Hiệu của A và B được kí hiệu là A \ B.,Phần bù của A trong B được kí hiệu là C,Không có,B,Hợp của hai tập hợp A và B được kí hiệu là A ∪ B. Hiệu của A và B được kí hiệu là A \ B. Vì vậy ta chọn đáp án B.
-"Các câu hỏi trắc nghiệm Toán lớp 10 sách Chân trời sáng tạo có đáp án, chọn lọc khác:",Ta có A \ B = {x | x \\ ∈ A và x \\ ∉ B}.,"Kí hiệu C_EA dùng để chỉ phần bù của A trong E, với A ⊂ E.","Do đó phương án A, C đúng.",Ta có A ∩ B = {x | x ∈ A và x ∈ B}.,D,"⦁ Ta có A \ B = {x | x ∈ A và x ∉ B}. ⦁ Kí hiệu C_EA dùng để chỉ phần bù của A trong E, với A ⊂ E. ⦁ Ta có A ∩ B = {x | x ∈ A và x ∈ B}."
