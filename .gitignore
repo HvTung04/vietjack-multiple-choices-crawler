@@ -2,3 +2,5 @@
 /.vscode
 /credentials.json
 /token.json
+/crawl_result/cd 
+/crawl_result/ctst
