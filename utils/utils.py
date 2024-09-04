@@ -10,6 +10,43 @@ def fetch_quest(soup, site):
         return fetch_quest_vietjack_me(soup)
 
 
+def export_all_href(url, site):
+    if site == "vietjack_com":
+        return export_all_href_vietjack_com(url)
+    if site == "vietjack_me":
+        return export_all_href_vietjack_me(url)
+    return None
+
+
+def export_all_href_vietjack_com(url):
+    soup = fetch_soup(url)
+    hrefs = soup.find_all("a")
+    url_list = [href.get("href") for href in hrefs]
+    url_list = [
+        f"https://vietjack.com/{url}"
+        for url in url_list
+        if isinstance(url, str)
+        and url.startswith("../")
+        and url.endswith(".jsp")
+        and "bai-tap-trac-nghiem" in url
+        and "index" not in url
+        and not url.split("/")[-1].startswith("chuong-")
+    ]
+    return url_list
+
+
+def export_all_href_vietjack_me(url):
+    soup = fetch_soup(url)
+    hrefs = soup.find_all("a")
+    url_list = [href.get("href") for href in hrefs]
+    url_list = [
+        url
+        for url in url_list
+        if isinstance(url, str) and url.startswith("https://") and url.endswith(".html")
+    ]
+    return url_list
+
+
 def extract_json_template(input_string):
     """
     Extracts a JSON object from a larger string containing the JSON object.
@@ -64,9 +101,17 @@ def elements_in_between(start_element, end_element):
     for sibling in start_element.next_siblings:
         if sibling == end_element or str(end_element) in str(sibling):
             break
-        if sibling.name:
+        if sibling.name and sibling.name == "p":
             elements_in_between.append(sibling)
     return elements_in_between
+
+
+def split_choices_string(choice_elements: str):
+    A_string = choice_elements.split("A.")[1].split("B.")[0]
+    B_string = choice_elements.split("B.")[1].split("C.")[0]
+    C_string = choice_elements.split("C.")[1].split("D.")[0]
+    D_string = choice_elements.split("D.")[1]
+    return {"choice_A": A_string, "choice_B": B_string, "choice_C": C_string, "choice_D": D_string}
 
 
 def split_choices(elements_between):
@@ -146,81 +191,31 @@ def fetch_quest_vietjack_me(soup):
 def fetch_quest_vietjack_com(soup):
     start_tag = soup.find("div", class_="ads_ads ads_1")
 
-    answer_tag = soup.find_all("section", class_="toggle")  # List of answers
-    prev_tag = [start_tag] + answer_tag
-    tag_gen = (tag for tag in prev_tag[:-1])
-
-    # Extract the content from the start tag to the end tag
+    answer_tags = soup.find_all("section", {"class": "toggle"})   # List of answers
     questions_data = []
-    for i, tag in enumerate(tag_gen):
-        possible_answers = tag.find_next_siblings("p")
-        for _, answer in enumerate(possible_answers):
-            if f"Câu {i+2}" in str(answer):
-                possible_answers = possible_answers[:_]
-                break
-
-        if "C." in str(possible_answers[1]):
-            possible_answers = possible_answers[:2]
-
-        if len(possible_answers) == 0:
+    for i, tag in enumerate(answer_tags):
+        if i == 0:
             continue
-        elif len(possible_answers) == 2:
-            question = str(possible_answers[0])
-            answer_row = str(possible_answers[1])
-            split_index1 = (
-                answer_row.find("B.")
-                if answer_row.find("B.") != -1
-                else answer_row.find("B")
-            )
-            split_index2 = (
-                answer_row.find("C.")
-                if answer_row.find("C.") != -1
-                else answer_row.find("C")
-            )
-            split_index3 = (
-                answer_row.find("D.")
-                if answer_row.find("D.") != -1
-                else answer_row.find("D")
-            )
-            answer = tag.find_next_sibling("section", class_="toggle")
+        try:
+            question_tag = answer_tags[i-1].find_next_sibling("p")
+            choices_tags = elements_in_between(question_tag, tag)
+            choices_section = split_choices_string("".join([str(tag) for tag in choices_tags]))
+
             data = {
-                "question": question,
-                "A": answer_row[:split_index1],
-                "B": answer_row[split_index1:split_index2],
-                "C": answer_row[split_index2:split_index3],
-                "D": answer_row[split_index3:],
-                "answer": str(answer),
+                "question": question_tag,
+                "A": choices_section["choice_A"],
+                "B": choices_section["choice_B"],
+                "C": choices_section["choice_C"],
+                "D": choices_section["choice_D"],
+                "answer": tag,
             }
-        else:
-            question = str(possible_answers[0])
-
-            answer_row1 = str(possible_answers[1])
-            answer_row2 = str(possible_answers[2])
-
-            answer = tag.find_next_sibling("section", class_="toggle")
-
-            split_index1 = answer_row1.find("B.")
-            split_index2 = answer_row2.find("D.")
-            data = {
-                "question": question,
-                "A": answer_row1[:split_index1],
-                "B": answer_row1[split_index1:],
-                "C": answer_row2[:split_index2],
-                "D": answer_row2[split_index2:],
-                "answer": str(answer),
-            }
-        questions_data.append(data)
+            questions_data.append(data)
+        except Exception as e:
+            print(f"Error fetching question: {e}")
+            print("--------------ERROR-------------------")
+            print(f"Question tag: {question_tag}")
+            print(f"Choices tags: {choices_tags}")
+            print("---------------------------------\n\n")
+            continue
 
     return questions_data
-
-
-def export_all_href(url):
-    soup = fetch_soup(url)
-    hrefs = soup.find_all("a")
-    url_list = [href.get("href") for href in hrefs]
-    url_list = [
-        url
-        for url in url_list
-        if isinstance(url, str) and url.startswith("https://") and url.endswith(".html")
-    ]
-    return url_list

@@ -66,7 +66,7 @@ class GroqModel:
             ],
             model=self.model,
             temperature=self.temperature,
-            response_format={"type": "json_object"},
+            # response_format={"type": "json_object"},
             stream=False,
         )
         return response.choices[0].message.content
@@ -79,7 +79,7 @@ class Crawler:
         self.site = site
         self.question_store = []
         self.question_final = []
-        self.system_prompt = f"""You are a Vietnamese AI expert with a specialization in HTML and LaTeX. Your task is to modify a multiple-choice question represented as a JSON object according to the following steps:
+        self.system_prompt = f"""You are a Vietnamese AI expert with a specialization in HTML and LaTeX. Your task is to modify a multiple-choice question represented as a JSON object according to the following steps. Only response with the final JSON object, do not mention anything else or explain the process, it is unnecessary. The steps are as follows:
         1. Convert Math Formulas: Identify all mathematical formulas within the content, the HTML math tags and convert them to LaTeX format, ensuring the syntax is accurate.
         2. Remove HTML Tags: Strip all HTML tags, MathML namespaces from the content to retain only plain text.
         3. Clean Question Content: In the 'question' field, retain only the core content of the question. For example, transform "Câu 1. <Question's content>" to "<Question's content>". If no question content is present, set this field to an empty string.
@@ -87,7 +87,7 @@ class Crawler:
         5. Extract Correct Answer: In the 'answer' field, extract and keep only the letter corresponding to the correct answer. For instance, from "Đáp án đúng là A vì 1+1=1", it should be "A". If the correct answer is absent, set this field to an empty string.
         6. Add Reasoning: Introduce a 'reasoning' field in the JSON object that contains the explanation of the answer. For example, split "Đáp án đúng là A vì 1+1=1" into "answer": "A" and "reasoning": "1+1=1". If reasoning is not provided, set this field to an empty string, ensuring that the reasoning aligns with the extracted answer.
         7. Grammar and Spelling Check: Review the content for Vietnamese grammar and spelling, correcting any errors identified.
-        The final JSON object must conform to the schema outlined in: {json.dumps(MultipleChoiceQuestion.model_json_schema(), indent=2)}."""
+        8. Ensure valid JSON format: Make sure the properties name enclosed in double quotes and the backslashes are doubled (to prevent JSON parsing errors)."""
 
     def get_quest(self, url):
         print(f"Getting questions from {url}...")
@@ -105,7 +105,7 @@ class Crawler:
         dump = str(quest)
         try:
             response = self.model.generate(dump, self.system_prompt)
-            json_response = json.loads(response)
+            json_response = utils.extract_json_template(response)
             print("------------------ADDED-------------------")
             print(json_response)
             print("---------------------------------\n\n")
